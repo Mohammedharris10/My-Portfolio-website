@@ -12,15 +12,15 @@ a{
 }
 
 .home-page{
-    background-color: #1d2333;
+    background-color: #262b40;
 }
 
 nav{
     background-color: #12192b;
     width: 100%;
-    padding: 15px 0;
+    padding: 25px 0;
     position: fixed;
-    /* z-index: 1; */
+    z-index: 1;
 }
 
 .row{
@@ -65,7 +65,8 @@ nav > div{
 .btn{
     background-color: skyblue;
     padding: 10px;
-    border-radius: 5px;
+    border-radius: 20px;
+    color: #262b40;
 }
 
 .profile-img > img{
@@ -75,4 +76,29 @@ nav > div{
     position: absolute;
     right: 0;
     top: 150px;
+}
+
+/* About Me Page */
+.about-page{
+background-color: #262b40;
+}
+
+.about-pic > img{
+    height: 400px;
+    width: 400px;
+    margin: 0px 0 0 -70px;
+}
+
+.col-2{
+    font-size: 20px;
+    color: white;
+
+}
+
+.col-2 h3{
+    margin:25px 0 10px 0;
+}
+
+.col-2 p{
+    margin:10px 0 25px 0;
 }

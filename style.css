@@ -254,3 +254,52 @@ i {
     color: black;
     font-size: 20px;
 }
+
+
+@media (min-width: 768px) and (max-width: 1024px) {
+    .logo {
+        color: skyblue;
+    }
+
+    /* Home Page */
+    .row{
+        /* background-color: olive; */
+        margin: 0 50px;
+    }
+
+    .col-1{
+        font-size: 1em;
+    }
+
+    .profile-img{
+        height: 225px;
+        width: 225px;
+    }
+
+    /* About Me */
+
+    .about-pic{
+        margin-right: 20px;
+    }
+
+    .about-me{
+        margin: 0;
+    }
+
+    /* My Project Section */
+    .col-3{
+        flex-basis: 90%;
+        margin: .8em 0;
+    }
+
+    .col-3 img{
+        width: 60%;
+        height: 60%;
+    }
+
+    /* Contact Page */
+    .contact-page h2{
+        font-size: 2em;
+        margin-bottom: 14px;
+    }
+}

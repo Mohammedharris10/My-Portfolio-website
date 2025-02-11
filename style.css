@@ -7,6 +7,11 @@ body {
     font-family: 'Poppins', sans-serif;
 }
 
+html {
+    /* scroll-behavior: smooth;
+    scroll-padding-top: 80px; */
+}
+
 ul {
     list-style: none;
 }
@@ -52,6 +57,10 @@ nav>div {
     color: white;
 }
 
+.nav-links ul li:hover {
+    color: skyblue;
+}
+
 .col-1 {
     color: white;
     flex-basis: 60%;
@@ -82,6 +91,13 @@ nav>div {
     overflow: hidden;
     right: 0;
     top: 13em;
+    transition: height 0.3s ease, width 0.3s ease;
+
+}
+
+.profile-img:hover{
+    height: 275px;
+    width: 275px;
 }
 
 .profile-img img {
@@ -99,6 +115,7 @@ nav>div {
 .about-pic {
     height: 300px;
     width: 200px;
+    margin-right: 20px;
     margin-bottom: 18px;
     border-radius: 10px;
     overflow: hidden;
@@ -115,7 +132,7 @@ nav>div {
     flex-basis: 70%;
     font-size: 1em;
     color: white;
-    margin: 0 0 0 20px;
+    margin: 0;
     align-self: center;
 }
 
@@ -127,11 +144,19 @@ nav>div {
     margin: 10px 0 25px 0;
 }
 
+.social-media{
+    display: inline;
+    position: relative;
+}
+
+.social-media i{
+    font-size: 2em;
+    color: skyblue;
+}
 /* Project Page */
 
 .project-page {
     background-color: #12192b;
-    /* width: 100vw; */
     color: white;
     padding: 50px 0;
     text-align: center;
@@ -143,12 +168,14 @@ nav>div {
 
 .col-3 {
     flex-basis: 25%;
+    margin: 0.8em 0;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
     flex-grow: 1;
-    padding: 1em;
-    border-radius: 0.5em;
     background-color: #262b40;
-    text-align: center;
-    margin: 2em 0;
+    border-radius: 0.5em;
+    padding: 1em;
 }
 
 .col-3 img {
@@ -156,6 +183,10 @@ nav>div {
     width: 200px;
     border-radius: 1em;
     margin-bottom: 1em;
+}
+
+.col-3 .button {
+    margin-top: 20px;
 }
 
 .col-3 h3 {
@@ -184,14 +215,14 @@ nav>div {
     margin-bottom: 120px;
 }
 
-.col-4 {
+.sml-row-1 {
     display: flex;
     gap: 5px;
     margin-bottom: 5px;
     flex-wrap: wrap;
 }
 
-.col-4 input {
+.sml-row-1 input {
     flex-grow: 1;
     height: 3em;
     margin-bottom: 5px;
@@ -202,7 +233,7 @@ nav>div {
     color: white;
 }
 
-.col-4 textarea {
+.sml-row-1 textarea {
     font-family: sans-serif;
     padding: 5px;
     flex-basis: 100%;
@@ -214,18 +245,19 @@ nav>div {
     resize: none;
 }
 
-.col-4 input::placeholder {
+.sml-row-1 input::placeholder {
     font-size: 14px;
     color: white;
 }
 
-.col-4 textarea::placeholder {
+.sml-row-1 textarea::placeholder {
     font-family: sans-serif;
     font-size: 14px;
     color: white;
 }
 
-.send-btn {
+.contact-me button{
+    /* border: 0; */
     margin-top: 25px;
 }
 
@@ -233,11 +265,13 @@ nav>div {
 
 .footer {
     width: 100%;
-    display: flex;
-    justify-content: space-between;
     padding: 20px 0;
     background-color: #262b40;
     color: white;
+}
+
+.footer>.row {
+    justify-content: space-between;
 }
 
 .footer p,
@@ -247,6 +281,7 @@ i {
 
 .footer i {
     background-color: skyblue;
+    padding: 5px;
     height: 30px;
     width: 30px;
     border-radius: 5px;
@@ -255,51 +290,206 @@ i {
     font-size: 20px;
 }
 
+.nav-icon {
+    display: none;
+}
+
 
 @media (min-width: 768px) and (max-width: 1024px) {
-    .logo {
-        color: skyblue;
-    }
 
     /* Home Page */
-    .row{
-        /* background-color: olive; */
+    .row {
         margin: 0 50px;
     }
 
-    .col-1{
+    .col-1 {
         font-size: 1em;
     }
 
-    .profile-img{
+    .profile-img {
         height: 225px;
         width: 225px;
     }
 
     /* About Me */
 
-    .about-pic{
+    .about-pic {
         margin-right: 20px;
     }
 
-    .about-me{
+    .about-me {
         margin: 0;
     }
 
     /* My Project Section */
-    .col-3{
+    .col-3 {
         flex-basis: 90%;
         margin: .8em 0;
     }
 
-    .col-3 img{
+    .col-3 img {
         width: 60%;
         height: 60%;
     }
 
     /* Contact Page */
-    .contact-page h2{
+    .contact-page h2 {
         font-size: 2em;
         margin-bottom: 14px;
     }
+}
+
+
+@media (min-width: 481px) and (max-width: 767px) {
+
+    .row {
+        margin: 0 30px;
+    }
+
+    /* Home */
+
+    .home-page>.row {
+        height: 120vh;
+        justify-content: center;
+        align-content: end;
+    }
+
+    .nav-icon {
+        display: block;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        background-color: skyblue;
+        height: 40px;
+        width: 40px;
+        border-radius: 5px;
+        z-index: 1;
+        font-size: 20px;
+        cursor: pointer;
+    }
+
+    .nav-links ul {
+        flex-direction: column;
+        align-items: center;
+        position: absolute;
+        background-color: black;
+        padding: 30px;
+        padding-top: 50px;
+        left: -5%;
+        top: -1000%;
+        width: 100%;
+        gap: 20px;
+        transition: top 0.5s ease-in-out;
+    }
+
+    .profile-img {
+        order: 0;
+        height: 18em;
+        width: 18em;
+        top: 5.5em;
+        right: auto;
+        margin-top: 25px;
+    }
+
+    .col-1 {
+        font-size: 1.2em;
+        flex-basis: 100%;
+        margin: 0;
+    }
+
+    .col-1 p {
+        padding: 10px 0 20px 0;
+    }
+
+    .col-1 h2 {
+        padding: 0 0 10px;
+    }
+
+    /* My Project */
+    .col-3 {
+        flex-basis: 90%;
+        margin: .8em 0;
+    }
+
+    .col-3 img {
+        width: 70%;
+        height: 60%;
+    }
+
+    /* Contact Me */
+    .contact-me {
+        flex-basis: 95%;
+        margin-bottom: 60px;
+    }
+}
+
+@media (min-width: 320px) and (max-width: 480px) {
+
+    .row {
+        margin: 0 20px;
+    }
+
+    /* Menu icon */
+
+    .nav-icon {
+        display: block;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        background-color: skyblue;
+        height: 40px;
+        width: 40px;
+        border-radius: 5px;
+        z-index: 1;
+        font-size: 20px;
+        cursor: pointer;
+    }
+
+    .nav-links ul {
+        flex-direction: column;
+        align-items: center;
+        position: absolute;
+        background-color: black;
+        padding: 30px;
+        padding-top: 50px;
+        left: -5%;
+        top: -1000%;
+        width: 100%;
+        gap: 20px;
+        transition: top 0.5s ease-in-out;
+    }
+
+    /* Home */
+
+    .home-page>.row {
+        height: 120vh;
+        justify-content: center;
+        align-content: flex-end;
+        /* background-color: olive; */
+    }
+
+
+    .col-1 {
+        margin: 0;
+        /* background-color: red; */
+        flex-basis: 100%;
+        font-size: 1em;
+    }
+
+    .col-1 p{
+        padding: 10px 0;
+    }
+
+    .profile-img{
+        right: auto;
+        top: 15%;
+    }
+
+    /* Contact Me */
+    .contact-me{
+        /* background-color: red; */
+        flex-basis: 100%;
+    }
+
+
 }
